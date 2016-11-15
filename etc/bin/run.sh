@@ -42,4 +42,4 @@ then
    TOREE_OPTS=${__TOREE_OPTS__}
 fi
 
-eval exec "${SPARK_HOME}/bin/spark-submit" "${SPARK_OPTS}" --class org.apache.toree.Main "${TOREE_ASSEMBLY}" "${TOREE_OPTS}" "$@"
+eval exec "${SPARK_HOME}/bin/spark-submit" --driver-java-options=-noverify "${SPARK_OPTS}" --class org.apache.toree.Main "${TOREE_ASSEMBLY}" "${TOREE_OPTS}" "$@"
